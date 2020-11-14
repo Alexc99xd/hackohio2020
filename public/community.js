@@ -1,15 +1,3 @@
-var config = {
-    apiKey: "AIzaSyC1JMYCRrAwfe6lay0J70YalT1P7Zbj0Cw",
-    authDomain: "hackohio2020-5f83d.firebaseapp.com",
-    databaseURL: "https://hackohio2020-5f83d.firebaseio.com",
-    projectId: "hackohio2020-5f83d",
-    storageBucket: "hackohio2020-5f83d.appspot.com",
-    messagingSenderId: "380845883019",
-    appId: "1:380845883019:web:e03a859c4600ec8698de8e",
-    measurementId: "G-0FLEPL8DWR"
-  };
-  firebase.initializeApp(config);
-
 var db = firebase.firestore();
 
 function checkStats(){
@@ -26,11 +14,11 @@ function checkStats(){
 
             //update stuff
             document.getElementById("stats").innerHTML = "Our current stats";
-            document.getElementById("count").innerHTML = "Columbus has redeemed " + count " total stickers!";
-            document.getElementById("stats").innerHTML = "The Columbus community has revitalized its parks with " + parks " amount of stickers";
-            document.getElementById("stats").innerHTML = "The recreational community has given out " + recreational " stickers!";
-            document.getElementById("stats").innerHTML = "The restaurant ";
-            document.getElementById("stats").innerHTML = "Our current stats";
+            document.getElementById("count").innerHTML = "Columbus has redeemed " + count + " total stickers!";
+            document.getElementById("parks").innerHTML = "The Columbus community has revitalized its parks with " + parks + " amount of stickers";
+            document.getElementById("recreational").innerHTML = "The recreational community has given out " + recreational + " stickers!";
+            document.getElementById("restaurants").innerHTML = "The restaurants of Columbus thank you for the " + restaurants + " stickers given out!";
+            document.getElementById("special_events").innerHTML = "Special Events of Columbus has given out " + special_events + " stickers!";
 
         } 
     }).catch(function(error) {
