@@ -34,6 +34,8 @@ function redeemCode() {
     });
 
 
+    //now save the sticker stats for the user (that is logged in)
+
 }
 
 function updateStats(org){

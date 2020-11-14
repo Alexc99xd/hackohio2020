@@ -1,5 +1,5 @@
 var signin = document.getElementById("googleSign");
-
+var db = firebase.firestore();
 signin.addEventListener("click", () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider)
@@ -19,5 +19,9 @@ signin.addEventListener("click", () => {
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
             // ...
+        }).then(()=>{
+            db.collection("users").doc(firebase.auth().currentUser.uid).set({
+                email: firebase.auth().currentUser.email,
+            }, { merge: true });
         });
 })
