@@ -11,6 +11,7 @@ function checkStats(){
             var recreational = docData.recreational;
             var restaurants = docData.restaurants;
             var special_events = docData.special_events;
+            var week = docData.weekly;
 
             //update stuff
             document.getElementById("stats").innerHTML = "Our current stats";
@@ -19,6 +20,7 @@ function checkStats(){
             document.getElementById("recreational").innerHTML = "The recreational community has given out " + recreational + " stickers!";
             document.getElementById("restaurants").innerHTML = "The restaurants of Columbus thank you for the " + restaurants + " stickers given out!";
             document.getElementById("special_events").innerHTML = "Special Events of Columbus has given out " + special_events + " stickers!";
+            document.getElementById("week").innerHTML = "This week, we have given out " + week + " stickers! Why don't you join in on the fun!";
 
         } 
     }).catch(function(error) {

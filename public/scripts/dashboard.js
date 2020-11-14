@@ -1,3 +1,4 @@
+
 var db = firebase.firestore();
 var loaded = false;
 

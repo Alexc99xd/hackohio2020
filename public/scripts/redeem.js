@@ -84,7 +84,11 @@ function updateStats(org){
         docRef.update({
             special_events: firebase.firestore.FieldValue.increment(1)
         });
-    }
+    } 
+    docRef.update({
+        weekly: firebase.firestore.FieldValue.increment(1)
+    });
+
 }
 
 
