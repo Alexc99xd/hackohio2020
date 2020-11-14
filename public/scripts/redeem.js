@@ -5,15 +5,10 @@ var db = firebase.firestore();
 function redeemCode() {
         
     //get the editable element
-    var editElem = document.getElementById("code-redeem");
-    
-    //get the edited element content
-    var userEntered = editElem.innerHTML;
-    var userEntered = userEntered.trim();
-    
-    //save the content to local storage
-    localStorage.userEdits = userEntered;
+    var editElem = document.getElementById('userCode').value;
+    //console.log(editElem);
 
+    var userEntered = editElem.trim();
 
     var docRef = db.collection("stickers").doc(userEntered);
     var string = "";
@@ -43,11 +38,11 @@ function redeemCode() {
 function updateUser(sticker_, code){
     var docRefUser = db.collection("users").doc(firebase.auth().currentUser.uid);
 
-    console.log("hello");
+    //console.log("hello");
     //check if user already has sticker
     docRefUser.get().then(function(doc) {
         if (doc.exists) {
-            console.log("Hello 2", doc.data()[sticker_] === true);
+            //console.log("Hello 2", doc.data()[sticker_] === true);
             if(doc.data()[sticker_] != null){
                 //has sticker, don't increment count
             } else {
@@ -93,13 +88,13 @@ function updateStats(org){
 }
 
 
-function checkEdits() {
+// function checkEdits() {
     
-    //find out if the user has previously saved edits
-    if(localStorage.userEdits!=null){
-        document.getElementById("code-redeem").innerHTML=localStorage.userEdits;
-    }
-}
+//     //find out if the user has previously saved edits
+//     if(localStorage.userEdits!=null){
+//         document.getElementById("code-redeem").innerHTML=localStorage.userEdits;
+//     }
+// }
 
 
 //firebase
