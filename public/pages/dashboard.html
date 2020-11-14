@@ -24,6 +24,12 @@
                     <a class="nav-link" href="redeem.html">Redeem</a>
                 </li>
                 <li class="nav-item px-3">
+                    <a class="nav-link" href="map.html">Map</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="sticker.html">Stickers</a>
+                </li>
+                <li class="nav-item px-3">
                     <a class="nav-link" id="signout" href="#">Sign out</a>
                 </li>
             </ul>
@@ -34,6 +40,7 @@
         <div class=row>
             <div class="col-md-6 text-center pt-2">
                 <h1>Stickers List</h1>
+                <ul id="sticker_title"></ul>
                 <ul id="stickerList"></ul>
             </div>
             <div class="col-md-6 text-center">
@@ -41,6 +48,8 @@
                     <div class="col-md-4 pb-5 pt-2">
                         <h3>Redeem</h3>
                         <a href="redeem.html"><button class="btn btn-primary">Click Here</button></a>
+                        <a href="sticker.html"><button class="btn btn-primary">View Stickers</button></a>
+                        <button id="bruh" onclick="loadStickers()">Load your damn stickers</button>
                     </div>
                 </row>
                 <row>
@@ -106,7 +115,7 @@
         <script defer src="/__/firebase/8.0.2/firebase-auth.js"></script>
         <script defer src="/__/firebase/8.0.2/firebase-firestore.js"></script>
         <script defer src="/__/firebase/init.js"></script>
-        <script defer src="../scripts/dashboard.js"></script>
+        <script defer src="../scripts/dashboard.js" async></script>
         <script defer src="../scripts/signOut.js"></script>
 </body>
 
