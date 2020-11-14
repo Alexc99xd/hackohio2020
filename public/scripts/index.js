@@ -22,6 +22,7 @@ signin.addEventListener("click", () => {
         }).then(() => {
             db.collection("users").doc(firebase.auth().currentUser.uid).set({
                 email: firebase.auth().currentUser.email,
+                sticker_count: 0,
             }, { merge: true });
         });
 })

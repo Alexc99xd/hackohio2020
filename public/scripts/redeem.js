@@ -20,10 +20,12 @@ function redeemCode() {
     docRef.get().then(function(doc) {
         if (doc.exists) {
             console.log("Document data:", doc.data());
+            console.log("Document data:", doc.data().aaaaa === true);
             string = doc.data().sticker + " from " + doc.data().place;
             document.getElementById("update").innerHTML = string;
             //update stats
             updateStats(doc.data().org);
+            updateUser(doc.data().sticker);
         } else {
             // doc.data() will be undefined in this case
             string = "invalid code!";
@@ -35,6 +37,32 @@ function redeemCode() {
 
 
     //now save the sticker stats for the user (that is logged in)
+
+}
+
+function updateUser(sticker_){
+    var docRefUser = db.collection("users").doc(firebase.auth().currentUser.uid);
+
+    console.log("hello");
+    //check if user already has sticker
+    docRefUser.get().then(function(doc) {
+        if (doc.exists) {
+            console.log("Hello 2", doc.data()[sticker_] === true);
+            if(doc.data()[sticker_] === true){
+                //has sticker, don't increment count
+            } else {
+                //has sticker, don't increment count
+                //doesn't have sticker
+                //add stick to true
+                db.collection("users").doc(firebase.auth().currentUser.uid).set({
+                    [sticker_]: true,
+                    sticker_count: firebase.firestore.FieldValue.increment(1),
+                    }, { merge: true });
+            }
+        } else {
+            //some error
+        }
+    });
 
 }
 
