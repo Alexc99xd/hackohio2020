@@ -9,13 +9,60 @@
 </head>
 
 <body>
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.0.2/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.0.2/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.0.2/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/init.js"></script>
-    <script defer src="../scripts/dashboard.js"></script>
+    <nav class="navbar navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Stickerio</a>
+        <div>
+            <ul class="navbar-nav mr-auto flex-row">
+                <li class="nav-item px-3">
+                    <a class="nav-link active" href="dashboard.html">Dashboard</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="community.html">Community Page</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="redeem.html">Redeem</a>
+                </li>
+                <li class="nav-item px-3">
+                    <a class="nav-link" href="#">Sign out</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class=row>
+            <div class="col-md-6 text-center pt-2">
+                <h1>Stickers List</h1>
+                <ul id="stickerList"></ul>
+            </div>
+            <div class="col-md-6 text-center">
+                <row>
+                    <div class="col-md-4 pb-5 pt-2">
+                        <h3>Redeem</h3>
+                        <a href="redeem.html"><button class="btn btn-primary">Click Here</button></a>
+                    </div>
+                </row>
+                <row>
+                    <div class="col-md-4 pt-5">
+                        <h2>Links to Columbus Places</h2>
+                        <div class="list-group pt-3">
+                            <a href="https://www.fpconservatory.org/" class="list-group-item list-group-item-action">Franklin Park Conservatory</a>
+                            <a href="https://www.columbus.gov/recreationandparks/parks/Tuttle-Park/" class="list-group-item list-group-item-action">Tuttle Park</a>
+                            <a href="
+                            Goodale Park - City of Columbus" class="list-group-item list-group-item-action">Goodale Park</a>
+                            <a href="https://www.osu.edu/map/building.php?building=200605" class="list-group-item list-group-item-action">The Oval</a>
+                        </div>
+                </row>
+                </div>
+            </div>
+        </div>
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/8.0.2/firebase-app.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/8.0.2/firebase-auth.js"></script>
+        <script defer src="/__/firebase/8.0.2/firebase-firestore.js"></script>
+        <script defer src="/__/firebase/init.js"></script>
+        <script defer src="../scripts/dashboard.js"></script>
 </body>
 
 </html>
