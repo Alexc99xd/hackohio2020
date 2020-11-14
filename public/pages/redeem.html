@@ -40,15 +40,17 @@
     <!-- <div id="code-redeem" contenteditable="true">
         Click to Enter Code
     </div> -->
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+        <form class="p-2 bd-highlight" onsubmit="return false" >
+            Enter Code: <input type="text" id="userCode" value=""/>
+            <!-- <input type="submit"/> -->
+        </form>
 
-    <form onsubmit="return false" >
-        Enter Code: <input type="text" id="userCode" value=""/>
-        <!-- <input type="submit"/> -->
-      </form>
-
-    <input type="button" value="Redeem Sticker" onclick="redeemCode()" />
-
-    <div id="update"> - Stuff</div>
+        <input type="button" value="Redeem Sticker" onclick="redeemCode()" />
+    </div>
+    <div class="d-flex flex-row bd-highlight mb-3 justify-content-center">
+        <div id="update"></div>
+    </div>
 
     <!-- <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script> -->
     <script defer src="/__/firebase/8.0.2/firebase-app.js"></script>
