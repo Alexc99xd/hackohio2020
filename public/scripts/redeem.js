@@ -19,13 +19,13 @@ function redeemCode() {
     var string = "";
     docRef.get().then(function(doc) {
         if (doc.exists) {
-            console.log("Document data:", doc.data());
-            console.log("Document data:", doc.data().aaaaa === true);
+            //console.log("Document data:", doc.data());
+            //console.log("Document data:", doc.data().aaaaa === true);
             string = doc.data().sticker + " from " + doc.data().place;
             document.getElementById("update").innerHTML = string;
             //update stats
             updateStats(doc.data().org);
-            updateUser(doc.data().sticker);
+            updateUser(doc.data().sticker, userEntered);
         } else {
             // doc.data() will be undefined in this case
             string = "invalid code!";
@@ -40,7 +40,7 @@ function redeemCode() {
 
 }
 
-function updateUser(sticker_){
+function updateUser(sticker_, code){
     var docRefUser = db.collection("users").doc(firebase.auth().currentUser.uid);
 
     console.log("hello");
@@ -48,14 +48,14 @@ function updateUser(sticker_){
     docRefUser.get().then(function(doc) {
         if (doc.exists) {
             console.log("Hello 2", doc.data()[sticker_] === true);
-            if(doc.data()[sticker_] === true){
+            if(doc.data()[sticker_] != null){
                 //has sticker, don't increment count
             } else {
                 //has sticker, don't increment count
                 //doesn't have sticker
                 //add stick to true
                 db.collection("users").doc(firebase.auth().currentUser.uid).set({
-                    [sticker_]: true,
+                    [sticker_]: code,
                     sticker_count: firebase.firestore.FieldValue.increment(1),
                     }, { merge: true });
             }
