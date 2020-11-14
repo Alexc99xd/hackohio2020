@@ -8,7 +8,7 @@ signin.addEventListener("click", () => {
             var token = result.credential.accessToken;
             var user = result.user;
             var base_url = window.location.origin;
-            base_url += '/dashboard.html'
+            base_url += 'pages/dashboard.html'
             window.location.assign(base_url);
         }).catch(function(error) {
             // Handle Errors here.
