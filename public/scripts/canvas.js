@@ -23,7 +23,7 @@ function make_base(x,y)
 {
     
     var img = document.getElementById(num);
-    context.drawImage(img, x, y, 40, 40);
+    context.drawImage(img, x, y, 100, 100);
 
 }
 
