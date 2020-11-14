@@ -33,6 +33,8 @@ function redeemCode() {
             console.log("Document data:", doc.data());
             string = doc.data().sticker + " from " + doc.data().place;
             document.getElementById("update").innerHTML = string;
+            //update stats
+            updateStats(doc.data().org);
         } else {
             // doc.data() will be undefined in this case
             string = "invalid code!";
@@ -44,6 +46,34 @@ function redeemCode() {
 
 
 }
+
+function updateStats(org){
+
+    var docRef = db.collection("stats").doc("sticker");
+    docRef.update({
+        count: firebase.firestore.FieldValue.increment(1)
+    });
+
+    if(org === "parks"){
+        docRef.update({
+            parks: firebase.firestore.FieldValue.increment(1)
+        });
+    } else if(org === "restaurants"){
+        docRef.update({
+            restaurants: firebase.firestore.FieldValue.increment(1)
+        });
+    } else if (org === "recreational"){
+        docRef.update({
+            recreational: firebase.firestore.FieldValue.increment(1)
+        });
+    } else if(org === "special_events"){
+        docRef.update({
+            special_events: firebase.firestore.FieldValue.increment(1)
+        });
+    }
+}
+
+
 function checkEdits() {
     
     //find out if the user has previously saved edits
