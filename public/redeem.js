@@ -1,14 +1,3 @@
-var config = {
-    apiKey: "AIzaSyC1JMYCRrAwfe6lay0J70YalT1P7Zbj0Cw",
-    authDomain: "hackohio2020-5f83d.firebaseapp.com",
-    databaseURL: "https://hackohio2020-5f83d.firebaseio.com",
-    projectId: "hackohio2020-5f83d",
-    storageBucket: "hackohio2020-5f83d.appspot.com",
-    messagingSenderId: "380845883019",
-    appId: "1:380845883019:web:e03a859c4600ec8698de8e",
-    measurementId: "G-0FLEPL8DWR"
-  };
-  firebase.initializeApp(config);
 
 var db = firebase.firestore();
 
