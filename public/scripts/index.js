@@ -8,7 +8,7 @@ signin.addEventListener("click", () => {
             var token = result.credential.accessToken;
             var user = result.user;
             var base_url = window.location.origin;
-            base_url += 'pages/dashboard.html'
+            base_url += '/pages/dashboard.html'
             window.location.assign(base_url);
         }).catch(function(error) {
             // Handle Errors here.
@@ -19,7 +19,7 @@ signin.addEventListener("click", () => {
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
             // ...
-        }).then(()=>{
+        }).then(() => {
             db.collection("users").doc(firebase.auth().currentUser.uid).set({
                 email: firebase.auth().currentUser.email,
             }, { merge: true });
