@@ -9,6 +9,9 @@ function redeemCode() {
     //console.log(editElem);
 
     var userEntered = editElem.trim();
+    if(userEntered === ""){
+        return;
+    }
 
     var docRef = db.collection("stickers").doc(userEntered);
     var string = "";
@@ -37,11 +40,12 @@ function redeemCode() {
 
 function updateUser(sticker_, code){
     var docRefUser = db.collection("users").doc(firebase.auth().currentUser.uid);
-
+    var str = firebase.auth().currentUser.uid;
     //console.log("hello");
     //check if user already has sticker
     docRefUser.get().then(function(doc) {
         if (doc.exists) {
+
             //console.log("Hello 2", doc.data()[sticker_] === true);
             if(doc.data()[sticker_] != null){
                 //has sticker, don't increment count
@@ -49,13 +53,16 @@ function updateUser(sticker_, code){
                 //has sticker, don't increment count
                 //doesn't have sticker
                 //add stick to true
-                db.collection("users").doc(firebase.auth().currentUser.uid).set({
+                db.collection("users").doc(str).set({
                     [sticker_]: code,
                     sticker_count: firebase.firestore.FieldValue.increment(1),
                     }, { merge: true });
             }
         } else {
-            //some error
+            db.collection("users").doc(str).set({
+                [sticker_]: code,
+                sticker_count: firebase.firestore.FieldValue.increment(1),
+                }, { merge: true });
         }
     });
 
