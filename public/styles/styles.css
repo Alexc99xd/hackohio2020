@@ -17,7 +17,7 @@
     padding-top: 15px;
     padding-bottom: 15px;
     border-radius: 40px;
-    box-shadow: 5px 5px #003166;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 4);
 }
 
 .about {
@@ -29,12 +29,11 @@
     border: 3px solid #004da0;
     background-color: #004da0;
     border-radius: 30px;
-    box-shadow: 7px 7px #003166;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 4);
 }
 
 .about-text {
     margin-top: 30px;
-    margin-bottom: 100px;
 }
 
 .signIn {
@@ -56,4 +55,44 @@
 img {
     width: 100%;
     height: auto;
+}
+
+
+/* Dashboard */
+
+.stickerFont {
+    color: white;
+}
+
+.loadSticker {
+    display: none;
+}
+
+#stickerView {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    border-radius: 30px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 4);
+}
+
+#featuredList {
+    margin-top: 60px;
+    background-color: #007bff;
+    margin-left: 60px;
+    margin-bottom: 60px;
+    margin-right: 60px;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 4);
+    color: white;
+}
+
+.list-group-item {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid white;
+}
+
+#stickerList {
+    margin-bottom: 10px;
 }
