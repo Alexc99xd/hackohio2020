@@ -63,7 +63,7 @@ function updateProgressBar(){
                 color: '#9600ff',
                 trailColor: '#ea3001',
                 trailWidth: 1,
-                duration: 1400,
+                duration: 6000,
                 text: {
                     value: '',
                     alignToBottom: true
