@@ -52,7 +52,7 @@ function updateProgressBar(){
         if (doc.exists) {
             var docData = doc.data();
             var count = docData.count;
-            const stickerGoal = 6969;
+            const stickerGoal = 25000;
             const percent = count/stickerGoal;
 
             document.getElementById('progress-details').innerHTML = `We have received ${(percent * 100).toFixed(2)}% of our goal of ${stickerGoal} stickers`;
