@@ -63,7 +63,7 @@ function updateProgressBar(){
                 color: '#9600ff',
                 trailColor: '#ea3001',
                 trailWidth: 1,
-                duration: 6000,
+                duration: 12000,
                 text: {
                     value: '',
                     alignToBottom: true
@@ -77,11 +77,10 @@ function updateProgressBar(){
                     if (value === 0) {
                     bar.setText('');
                     } else {
-                    bar.setText(count + " stickers! Goal: " + stickerGoal);
+                    bar.setText(value + "% Goal: " + stickerGoal + " stickers");
                     }
             
                     bar.text.style.color = state.color;
-                    //document.getElementById('progress-details').css("color", state.color);
                 }
                 });
                 bar.text.style.fontSize = '4rem';
